@@ -10,16 +10,14 @@ stake = parseInt(stake);
 
 const odds_payout = (odds, stake) => {
     if (odds > 0) {
-        odds_multiplier = odds/100;
         implied_prob = Intl.NumberFormat().format(100/(odds + 100) * 100);
-        profit = Intl.NumberFormat().format(stake * odds_multiplier);
+        profit = Intl.NumberFormat().format(stake * (odds/100));
         console.log('The implied probability of winning the bet is ' + implied_prob + '%');
         console.log('Your potential profit is: ' + profit);
     } else if (odds < 0) {        
         odds = Math.abs(odds);
-        odds_multiplier = odds/100;
         implied_prob = Intl.NumberFormat().format(odds/(odds + 100) * 100);
-        profit = Intl.NumberFormat().format(stake * odds_multiplier);
+        profit = Intl.NumberFormat().format(stake * (odds/100));
         console.log('The implied probability of winning the bet is ' + implied_prob + '%');
         console.log('Your potential profit is: ' + profit);
     }
