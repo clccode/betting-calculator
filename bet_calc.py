@@ -1,3 +1,5 @@
+# Get user input on odds and how much will be wagered
+
 odds = int(input('What are the odds of your bet?: '))
 stake = int(input('How much do you intend to bet?: '))
 
